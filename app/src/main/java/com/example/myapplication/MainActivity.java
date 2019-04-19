@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         // in content do not change the layout size
         // of the RecyclerView
         getListFromServer();
-        showList();
     }
 
     private void getListFromServer() {
@@ -44,29 +43,30 @@ public class MainActivity extends AppCompatActivity {
         Call<List<Brewery>> call = restApi.getListBreweries();
         call.enqueue(new Callback<List<Brewery>>() {
             @Override
+            //Si on obtient bien une réponse du serveur
             public void onResponse(Call<List<Brewery>> call, Response<List<Brewery>> response) {
+                //Si la réponse contient des données (le serveur peut répondre autre chose)
                if(response.isSuccessful()){
                    List<Brewery> list = response.body();
+                   showList(list);
                }
             }
 
             @Override
+            //Si le serveur renvoie qu'il y a eut une erreur ex : pas d'accès a internet
             public void onFailure(Call<List<Brewery>> call, Throwable t) {
                 Log.d("erreur", "erreur");
             }
         });
     }
 
-    private void showList() {
+    private void showList(List<Brewery> list) {
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        List<String> input = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
-        }// define an adapter
-        mAdapter = new MyAdapter(input);
+
+        mAdapter = new MyAdapter(list);
         recyclerView.setAdapter(mAdapter);
     }
 }
