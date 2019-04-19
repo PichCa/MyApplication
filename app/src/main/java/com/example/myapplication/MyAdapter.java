@@ -69,6 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 remove(position);
+                notifyDataSetChanged();
             }
         });
 
