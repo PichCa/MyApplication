@@ -16,6 +16,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+    //Déclaration des variables
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -24,11 +25,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Instanciation du recyclerView
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // use this setting to
-        // improve performance if you know that changes
-        // in content do not change the layout size
-        // of the RecyclerView
+        // use this setting to improve performance
+        // if you know that changes in content do not change the layout size of the RecyclerView
         getListFromServer();
     }
 
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 .create(RestApiBreweryService.class);
 
         Call<List<Brewery>> call = restApi.getListBreweries();
+        //Place call dans une queue = file d'attente car appel asynchrone
         call.enqueue(new Callback<List<Brewery>>() {
             @Override
             //Si on obtient bien une réponse du serveur

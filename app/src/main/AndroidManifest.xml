@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-//Il faut donner la permission d'aller sur internet à l'app
+//Il faut donner la permission d'aller sur internet à l'app pour faire appel à l'API
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application

@@ -29,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    public void add(int position, String item) {
+    /*public void add(int position, String Brewery item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void remove(int position) {
         values.remove(position);
         notifyItemRemoved(position);
-    }
+    }*/
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(List<Brewery> myDataset) {
@@ -63,17 +63,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final String name = values.get(position);
-        holder.txtHeader.setText(name);
+        final Brewery selectedBeer = values.get(position);
+        holder.txtHeader.setText(selectedBeer.getName());
         holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);
+                //remove(position);
                 notifyDataSetChanged();
             }
         });
 
-        holder.txtFooter.setText("Footer: " + name);
+        holder.txtFooter.setText("Footer: " + selectedBeer.getWebsite_url());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
