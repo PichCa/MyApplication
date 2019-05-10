@@ -73,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         });
 
-        holder.txtFooter.setText("Footer: " + selectedBeer.getWebsite_url());
+        holder.txtFooter.setText("Country of origin : " + selectedBeer.getCountry());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

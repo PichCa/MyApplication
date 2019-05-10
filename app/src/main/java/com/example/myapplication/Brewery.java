@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 public class Brewery {
 
-    //private int id;
+    private int id;
     private String name;
     private String brewery_type;
     //private String street;
@@ -14,9 +14,9 @@ public class Brewery {
     private String latitude;
     private String website_url;
 
-    /*public int getId() {
+    public int getId() {
         return id;
-    }*/
+    }
 
     public String getName() {
         return name;
