@@ -1,11 +1,16 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
         // use this setting to improve performance
         // if you know that changes in content do not change the layout size of the RecyclerView
         getListFromServer();
+    }
+
+    private MyAdapter.OnItemClickListener getListener() {
+        return new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Brewery item) {
+                Intent intent;
+                Gson gson = new Gson();
+                intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("key", gson.toJson(item));
+                startActivity(intent);
+            }
+        };
     }
 
     private void getListFromServer() {
@@ -67,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new MyAdapter(list);
+        mAdapter = new MyAdapter(list, getListener());
         recyclerView.setAdapter(mAdapter);
     }
 }
