@@ -1,19 +1,12 @@
 package com.example.myapplication;
 
-import java.lang.annotation.Target;
 import java.util.List;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
-
-import com.google.gson.Gson;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Brewery> values;
@@ -39,23 +32,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
     }
-
-    /*public void add(int position, String Brewery item) {
-        values.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        values.remove(position);
-        notifyItemRemoved(position);
-    }*/
-
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(List<Brewery> myDataset, OnItemClickListener listener) {
         values = myDataset;
         this.listener = listener;
     }
-
     // Create new views (invoked by the layout manager)
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
@@ -70,7 +51,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
@@ -86,11 +66,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.txtFooter.setText("Type of beer : " + selectedBeer.getBrewery_type());
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return values.size();
     }
-
 }
 

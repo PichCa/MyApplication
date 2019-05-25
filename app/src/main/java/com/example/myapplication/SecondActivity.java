@@ -12,24 +12,16 @@ import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.ItemizedIconOverlay;
-import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.OverlayItem;
 
-import java.util.ArrayList;
-
-import okhttp3.internal.Platform;
 
 public class SecondActivity extends AppCompatActivity {
 
     private MapView map_view;
     private Double latitude;
     private Double longitude;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +46,15 @@ public class SecondActivity extends AppCompatActivity {
         GeoPoint startPoint = new GeoPoint(latitude, longitude);
 
         Marker startMarker = new Marker(map_view);
-        startMarker.setIcon(getDrawable(R.drawable.beer));
+        startMarker.setIcon(getDrawable(R.drawable.icon_beer));
         startMarker.setPosition(startPoint);
-        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        map_view.getOverlays().add(startMarker);
+        //startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
 
+        map_view.getOverlays().add(startMarker);
         mapController.setCenter(startPoint);
+
+        TextView street = findViewById(R.id.street);
+        street.setText("street : "+brewery.getStreet()+"\ncity : "+brewery.getCity()+"\nstate : "+brewery.getState()+"\ncountry : "+brewery.getCountry()+"\nWeb URL : "+brewery.getWebsite_url());
     }
 
 
