@@ -10,8 +10,8 @@ public class Brewery {
     private String state;
     private String postal_code;
     private String country;
-    /*private String longitude;
-    private String latitude;*/
+    private String longitude;
+    private String latitude;
     private String website_url;
 
     public int getId() {
@@ -46,13 +46,13 @@ public class Brewery {
         return country;
     }
 
-    /*public String getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
     public String getLatitude() {
         return latitude;
-    }*/
+    }
 
     public String getWebsite_url() {
         return website_url;
