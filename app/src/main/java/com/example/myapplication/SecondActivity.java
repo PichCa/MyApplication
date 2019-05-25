@@ -55,6 +55,8 @@ public class SecondActivity extends AppCompatActivity {
 
         TextView street = findViewById(R.id.street);
         street.setText("street : "+brewery.getStreet()+"\ncity : "+brewery.getCity()+"\nstate : "+brewery.getState()+"\ncountry : "+brewery.getCountry()+"\nWeb URL : "+brewery.getWebsite_url());
+        TextView titre = findViewById(R.id.titre);
+        titre.setText(brewery.getName());
     }
 
 
