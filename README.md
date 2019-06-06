@@ -1,7 +1,9 @@
 # MyApplication
+
 Première application mobile développée sur Android Studio par Carole PICHERY 3A CFA de l'ESIEA en travaux pratiques de programmation mobile encadrés par [M.ETIENNE](https://github.com/Vincebrees) de Février à Mai 2019.
 ---
 ## Présentation :
+
 Cette application affiche des brasseries des Etats-Unis vendant différents types de bières et utilise l'[API](https://api.openbrewerydb.org/breweries). En cliquant sur une des brasseries on obtient sa géolocalisation, son adresse et url de la brasserie. 
 ---
 ## Prérequis :
