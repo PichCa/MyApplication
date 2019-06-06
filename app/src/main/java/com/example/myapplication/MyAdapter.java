@@ -2,11 +2,14 @@ package com.example.myapplication;
 
 import java.util.List;
 
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Brewery> values;

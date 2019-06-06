@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Instanciation du recyclerView
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // use this setting to improve performance
-        // if you know that changes in content do not change the layout size of the RecyclerView
         getListFromServer();
     }
 
