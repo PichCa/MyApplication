@@ -8,7 +8,7 @@
 ---
 ## Prérequis :
 1. Intallation d'Android Studio 
-2. Récupération de la [branche develop](https://github.com/PichCa/MyApplication/tree/develop)
+2. Récupération de la [branche image](https://github.com/PichCa/MyApplication/tree/feature/img)
 ---
 ## Consignes : 
 * Deux écrans : Un écran avec une liste et un écran avec un détail de l’item.
@@ -19,11 +19,13 @@
 1. Ecran home : 
 * Affiche la liste des brasseries des Etats-Unis
 * Description des bières vendues. 
+<img src="app/README_IMG/home.png" alt="home">
 2. Ecran du détail de la localisation des brasseries : 
 * Rappelle le nom de la brasserie
 * Affiche l’adresse de la brasserie
 * L’url du site de la brasserie 
 * La localisation de la brasserie avec l’icône bière
+<img src="app/README_IMG/local.png" alt="local">
 ---
 ## Amélioration possible : 
 * Stocker les données de l'API en cache
