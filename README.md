@@ -27,13 +27,13 @@
 1. Ecran home : 
 * Affiche la liste des brasseries des Etats-Unis
 * Description des bières vendues.
-:![home](home.png)
+<img src="home.png" alt="home" width="250">
 2. Ecran du détail de la localisation des brasseries : 
 * Rappelle le nom de la brasserie
 * Affiche l’adresse de la brasserie
 * L’url du site de la brasserie 
 * La localisation de la brasserie avec l’icône bière
-:![localisation](local.png)
+<img src="local.png" alt="local" width="250">
 
 ---
 
