@@ -27,13 +27,13 @@
 1. Ecran home : 
 * Affiche la liste des brasseries des Etats-Unis
 * Description des bières vendues.
-:![home](https://github.com/PichCa/MyApplication/tree/feature/img/app/README_IMG/home.png "Home")
+:![home] (https://github.com/PichCa/MyApplication/tree/feature/img/app/README_IMG/home.png "Home")
 2. Ecran du détail de la localisation des brasseries : 
 * Rappelle le nom de la brasserie
 * Affiche l’adresse de la brasserie
 * L’url du site de la brasserie 
 * La localisation de la brasserie avec l’icône bière
-:![localisation](https://github.com/PichCa/MyApplication/tree/feature/img/app/README_IMG/local.png "Localisation")
+:![localisation] (https://github.com/PichCa/MyApplication/tree/feature/img/app/README_IMG/local.png "Localisation")
 
 ---
 
